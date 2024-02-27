@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{42062F7D-A8DC-4002-976C-B20AEEEEFDB3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solidus.Middleware.Authentication", "src\Solidus.Middleware.Authentication\Solidus.Middleware.Authentication.csproj", "{8E86D2D0-8A40-40C3-92B9-094D4B5A7EF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{492D59E2-6142-469B-8767-C42FA64DB85D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solidus.Middleware.Authentication.Tests", "test\Solidus.Middleware.Authentication.Tests\Solidus.Middleware.Authentication.Tests.csproj", "{5839668E-AEA3-4383-87F9-9C657D03B6B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E86D2D0-8A40-40C3-92B9-094D4B5A7EF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E86D2D0-8A40-40C3-92B9-094D4B5A7EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E86D2D0-8A40-40C3-92B9-094D4B5A7EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E86D2D0-8A40-40C3-92B9-094D4B5A7EF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5839668E-AEA3-4383-87F9-9C657D03B6B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5839668E-AEA3-4383-87F9-9C657D03B6B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5839668E-AEA3-4383-87F9-9C657D03B6B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5839668E-AEA3-4383-87F9-9C657D03B6B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E86D2D0-8A40-40C3-92B9-094D4B5A7EF5} = {42062F7D-A8DC-4002-976C-B20AEEEEFDB3}
+		{5839668E-AEA3-4383-87F9-9C657D03B6B0} = {492D59E2-6142-469B-8767-C42FA64DB85D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {202EF8A2-5FB8-427E-A1CD-E1B996D92DA0}
+	EndGlobalSection
+EndGlobal
