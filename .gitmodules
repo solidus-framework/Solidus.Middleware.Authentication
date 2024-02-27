@@ -1,3 +1,6 @@
 [submodule "sub/common"]
 	path = sub/common
 	url = https://github.com/solidus-framework/common.git
+[submodule "sub/assets"]
+	path = sub/assets
+	url = https://github.com/solidus-framework/assets.git

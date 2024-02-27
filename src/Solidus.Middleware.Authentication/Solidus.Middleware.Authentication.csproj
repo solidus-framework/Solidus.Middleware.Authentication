@@ -11,4 +11,17 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <Version>0.1.0</Version>
+    <PackageIcon>nuget_icon.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/solidus-framework/Solidus.Middleware.Authentication</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\sub\assets\logo\v1\nuget_icon.png" Pack="true" PackagePath="nuget_icon.png"/>
+    <None Include="..\..\README.md" Pack="true" PackagePath="README.md"/>
+  </ItemGroup>
+
 </Project>

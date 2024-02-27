@@ -1,0 +1,24 @@
+name: Publish to NuGet
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: 'recursive'
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Pack
+      run: dotnet pack ./src/Solidus.Middleware.Authentication/Solidus.Middleware.Authentication.csproj -o bin/Publish
+    - name: Publish
+      run: dotnet nuget push ./bin/Publish/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
