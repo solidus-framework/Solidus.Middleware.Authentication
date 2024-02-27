@@ -92,6 +92,7 @@ using Solidus.Middleware.Authentication;
 using Solidus.Middleware.Authentication.Account;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.UseKestrel(o => o.Listen(IPAddress.Loopback, 44019));
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
@@ -155,4 +156,140 @@ app.Run();
 
 ```sh
 dotnet run
+```
+
+## Test application using postman
+
+Collection to import:
+
+```json
+{
+	"info": {
+		"_postman_id": "9d489198-6bfd-4df0-bf4f-b764117a8b66",
+		"name": "Solidus.Middleware.Authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18686893"
+	},
+	"item": [
+		{
+			"name": "sign-up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"the-login\",\r\n    \"password\": \"the-password\",\r\n    \"rememberMe\": true,\r\n    \"metadata\": {\r\n        \"FirstName\": \"John\",\r\n        \"LastName\": \"Smith\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/account/sign-up",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"account",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign-in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"the-login\",\r\n    \"password\": \"the-password\",\r\n    \"rememberMe\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/account/sign-in",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"account",
+						"sign-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign-out",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/auth/sign-out",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"sign-out"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/auth/status",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:44019",
+			"type": "string"
+		}
+	]
+}
 ```
